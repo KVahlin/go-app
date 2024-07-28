@@ -7,6 +7,7 @@ import (
 )
 
 func MessageHandler(w http.ResponseWriter, r *http.Request) {
+	log.Print("Go recieve message")
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
@@ -27,6 +28,7 @@ func MessageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	log.Print("Go server have stared")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/message", MessageHandler)
 
