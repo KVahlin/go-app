@@ -32,6 +32,6 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/message", MessageHandler)
 
-	err := http.ListenAndServe(":6030", mux)
+	err := http.ListenAndServe(":6080", mux)
 	log.Fatal(err)
 }
